@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Privacy Policy | Brownstone Consulting</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description"
+        content="Brownstone Consulting audits your daily business workflows, identifies lost hours, and embeds quiet, reliable AI systems into the software your team already uses.">
+    <title>Brownstone Consulting — Strategic AI Consulting &amp; Operational Implementation</title>
+
+    <!-- Google Fonts & Brand Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,13 +17,16 @@
         font-family: 'Cinzel', Georgia, serif !important;
         letter-spacing: 0.22em !important;
       }
-      body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
+
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body class="bg-white text-slate-900 min-h-screen flex flex-col justify-between selection:bg-blue-100 selection:text-blue-900">
-    <!-- Global Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+
+<body>
+
+    <!-- ─── 1. Header Navigation Bar (Fixed Top) ─── -->
+    <header class="site-header" id="site-header">
+        <div class="header-container">
             <a href="/" class="inline-block select-none py-1 hover:opacity-95 transition-opacity" style="text-decoration: none !important;">
               <span style="
                 font-family: 'Cinzel', 'Times New Roman', Georgia, serif;
@@ -35,175 +42,659 @@
                 BROWNSTONE CONSULTING
               </span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-slate-600">
-                <a href="/#focus-areas" class="hover:text-[#1E40AF] transition-colors no-underline">Focus Areas</a>
-                <a href="/philosophy/" class="hover:text-[#1E40AF] transition-colors no-underline">Philosophy</a>
-                <a href="/careers/" class="hover:text-[#1E40AF] transition-colors no-underline">Careers</a>
-                <a href="/faqs/" class="hover:text-[#1E40AF] transition-colors no-underline">FAQs</a>
+
+            <nav class="center-nav" aria-label="Primary Navigation">
+                <a href="#hero" class="nav-item">HOME</a>
+                <a href="#methodology" class="nav-item">HOW WE WORK</a>
+                
+                <!-- Focus Areas Interactive Dropdown -->
+                <div class="nav-dropdown-wrapper" id="focus-areas-dropdown">
+                    <button class="nav-item dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+                        <span>FOCUS AREAS</span>
+                        <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu" role="menu">
+                        <div class="dropdown-header font-mono">FUNCTIONAL DEPARTMENT SPECIALIZATIONS</div>
+                        
+                        <a href="/sales-operations/" class="dropdown-item" role="menuitem" id="nav-sales-ops">
+                            <div class="item-text-block">
+                                <div class="item-title">Sales &amp; Operations (S&amp;OP)</div>
+                                <div class="item-desc">Autonomous lead triage, real-time inventory validation &amp; 1-click CRM sync</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+
+                        <a href="/it-operations/" class="dropdown-item" role="menuitem" id="nav-it-ops">
+                            <div class="item-text-block">
+                                <div class="item-title">IT &amp; Technical Operations</div>
+                                <div class="item-desc">Self-resolving access requests, ticket triage &amp; human-supervised serverless fixes</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+
+                        <a href="/finance-compliance/" class="dropdown-item" role="menuitem" id="nav-finance-compliance">
+                            <div class="item-text-block">
+                                <div class="item-title">Finance &amp; Compliance</div>
+                                <div class="item-desc">Continuous SEBI audit readiness, invoice matching &amp; automated approval controls</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+
+                        <a href="/growth-marketing/" class="dropdown-item" role="menuitem" id="nav-growth-marketing">
+                            <div class="item-text-block">
+                                <div class="item-title">Growth &amp; Marketing Operations</div>
+                                <div class="item-desc">Direct client acquisition &amp; automated WhatsApp triage using your daily tools</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+
+                        <a href="/hr-talent/" class="dropdown-item" role="menuitem" id="nav-hr-talent">
+                            <div class="item-text-block">
+                                <div class="item-title">HR &amp; Talent Management</div>
+                                <div class="item-desc">Top 5% resume match scoring, calendar scheduling &amp; 24/7 internal policy assistant</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="/philosophy/" class="nav-item">ABOUT OUR PHILOSOPHY</a>
             </nav>
-            <a href="/#audit" class="bg-[#1E40AF] hover:bg-[#1D4ED8] text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all shadow-md no-underline">
-                Book Audit
-            </a>
+
+            <div class="header-actions">
+                <button class="btn btn-pill-blue" id="header-audit-btn" data-modal-target="audit-modal">Book 30-Min Audit</button>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="pt-28 pb-24 flex-1">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Breadcrumb -->
-            <div class="mb-8">
-                <a href="/" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-[#1E40AF] transition-colors no-underline">
-                    ← Back to Home
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <div class="drawer-header">
+            <span class="brand-text">BROWNSTONE</span>
+            <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-nav" aria-label="Mobile Navigation">
+            <a href="#hero" class="mobile-nav-item">HOME</a>
+            <a href="#methodology" class="mobile-nav-item">HOW WE WORK</a>
+            <div class="mobile-nav-group">
+                <div class="mobile-group-title font-mono">FUNCTIONAL SPECIALIZATIONS</div>
+                <a href="/sales-operations/" class="mobile-nav-subitem">
+                    <span class="subitem-title">Sales &amp; Operations (S&amp;OP)</span>
+                    <span class="subitem-desc">Autonomous lead triage, real-time inventory validation &amp; 1-click CRM sync</span>
+                </a>
+                <a href="/it-operations/" class="mobile-nav-subitem">
+                    <span class="subitem-title">IT &amp; Technical Operations</span>
+                    <span class="subitem-desc">Self-resolving access requests, ticket triage &amp; human-supervised serverless fixes</span>
+                </a>
+                <a href="/finance-compliance/" class="mobile-nav-subitem">
+                    <span class="subitem-title">Finance &amp; Compliance</span>
+                    <span class="subitem-desc">Continuous SEBI audit readiness, invoice matching &amp; automated approval controls</span>
+                </a>
+                <a href="/growth-marketing/" class="mobile-nav-subitem">
+                    <span class="subitem-title">Growth &amp; Marketing Operations</span>
+                    <span class="subitem-desc">Direct client acquisition &amp; automated WhatsApp triage using your daily tools</span>
+                </a>
+                <a href="/hr-talent/" class="mobile-nav-subitem">
+                    <span class="subitem-title">HR &amp; Talent Management</span>
+                    <span class="subitem-desc">Top 5% resume match scoring, calendar scheduling &amp; 24/7 internal policy assistant</span>
                 </a>
             </div>
-
-            <!-- Page Header -->
-            <div class="border-b border-slate-200 pb-8 mb-10 space-y-3">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[#1E40AF] text-xs font-semibold uppercase tracking-wider">
-                    ✦ Governance & Legal
-                </div>
-                <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-                    Privacy Policy
-                </h1>
-                <p class="text-xs sm:text-sm text-slate-500 font-medium">
-                    Effective Date: September 2026 • Last Updated: September 2026
-                </p>
-                <p class="text-sm sm:text-base text-slate-600 leading-relaxed font-normal pt-2">
-                    Brownstone Consulting ("Brownstone", "we", "us", or "our") respects the privacy of individuals who interact with our Website, services, personnel, and business operations.
-                </p>
-            </div>
-
-            <!-- Complete 10-Section Policy Content -->
-            <div class="space-y-10 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                <!-- Section 1 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">1. Scope</h2>
-                    <p>This Privacy Policy applies to personal information collected through Brownstone's website (brownstoneconsulting.in), online inquiry forms, direct email communications, advisory engagements, and recruitment interactions.</p>
-                </section>
-
-                <!-- Section 2 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">2. Information We May Collect</h2>
-                    <p>Depending on your interaction with Brownstone, we may collect:</p>
-                    <ul class="list-disc pl-5 space-y-1 text-slate-600">
-                        <li><strong>Contact & Identity Details:</strong> Full name, professional email address, phone number, organization name, job title, and country.</li>
-                        <li><strong>Communication Data:</strong> Inquiries, consultation scoping details, and email correspondence.</li>
-                        <li><strong>Recruitment Data:</strong> Resumes, employment history, code repositories, and references submitted for career opportunities.</li>
-                        <li><strong>Technical Usage Metadata:</strong> IP addresses, browser types, device IDs, and essential session logs.</li>
-                    </ul>
-                </section>
-
-                <!-- Section 3 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">3. How We Collect Information</h2>
-                    <p>Information is collected directly when you submit form requests, send emails to our personnel, or engage in advisory consultations. Technical log data is collected automatically via standard Web server protocols.</p>
-                </section>
-
-                <!-- Section 4 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">4. How We Use Information</h2>
-                    <p>We process personal data strictly to evaluate consultation inquiries, deliver process architecture and engineering services, perform administrative operations, manage recruitment, and maintain corporate compliance.</p>
-                </section>
-
-                <!-- Section 5 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">5. Legal Basis for Processing</h2>
-                    <p>We process personal data in accordance with the Digital Personal Data Protection (DPDP) Act of India, GDPR, and international data protection standards. Processing is grounded in user consent, legitimate business interests, contractual necessity, or regulatory compliance.</p>
-                </section>
-
-                <!-- Section 6 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">6. AI and Personal Information</h2>
-                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-                        <p class="font-bold text-slate-900 text-xs uppercase tracking-wider">Critical Operational Distinction:</p>
-                        <p><strong>Website & Inquiries:</strong> Public website submissions and email inquiries are never fed into public LLM training datasets.</p>
-                        <p><strong>Client System Deployments:</strong> Production AI pipelines built for enterprise clients operate inside isolated customer Virtual Private Clouds (VPC) with zero-data-retention model gateways and KMS encryption.</p>
-                    </div>
-                </section>
-
-                <!-- Section 7 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">7. Client Data & Data Processing Agreements</h2>
-                    <p>All client data ingested during diagnostic scoping or implementation engagements is governed by dedicated Master Services Agreements (MSA), Data Processing Agreements (DPA), and strict Non-Disclosure Agreements (NDA).</p>
-                </section>
-
-                <!-- Section 8 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">8. Data Sharing & Zero Sale Guarantee</h2>
-                    <div class="p-4 rounded-xl bg-blue-50 border border-blue-200 text-blue-900">
-                        <strong>Zero Sale Guarantee:</strong> Brownstone Consulting does not sell, rent, monetize, or trade personal information to any third party under any circumstances.
-                    </div>
-                </section>
-
-                <!-- Section 9 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">9. Third-Party Technology Providers & Inquiries</h2>
-                    <p>We work with trusted enterprise cloud providers (AWS, GCP, Azure) under strict security requirements. For privacy inquiries, DPDP data access requests, or compliance reviews, please contact our Data Protection Office:</p>
-                    
-                    <div class="p-5 rounded-2xl bg-slate-900 text-white space-y-2 mt-4">
-                        <div class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">Data Protection & Privacy Officer</div>
-                        <div class="text-sm font-semibold">Brownstone Consulting Private Limited</div>
-                        <div class="text-xs text-slate-300">Email: <a href="mailto:hello@brownstoneconsulting.in" class="text-blue-300 hover:text-white underline">hello@brownstoneconsulting.in</a></div>
-                        <div class="text-xs text-slate-300">Phone: <a href="tel:+918652168748" class="text-blue-300 hover:text-white underline">+91 8652168748</a></div>
-                        <div class="text-xs text-slate-300">Office: G-40 D wing Elco Arcade, Hill Rd, Bandra West, Mumbai, Maharashtra</div>
-                    </div>
-                </section>
-
-                <!-- Section 10 -->
-                <section class="space-y-3">
-                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4">10. Data Retention & Governance Schedule</h2>
-                    <p>Brownstone retains personal data only for the duration necessary to satisfy operational objectives or statutory obligations under Indian DPDP Act & international standards.</p>
-                    <div class="w-full overflow-x-auto border border-slate-200 rounded-xl my-6">
-                        <table class="w-full text-left border-collapse text-xs sm:text-sm min-w-[600px]">
-                            <thead>
-                                <tr class="bg-slate-100/80 border-b border-slate-200 text-slate-900 font-semibold">
-                                    <th class="py-3 px-4">Category</th>
-                                    <th class="py-3 px-4">Data Types</th>
-                                    <th class="py-3 px-4">Retention Period</th>
-                                    <th class="py-3 px-4">Governance Standard</th>
-                                </tr>
-                            </thead>
-                            <tbody class="divide-y divide-slate-200 text-slate-600">
-                                <tr class="hover:bg-slate-50/50">
-                                    <td class="py-3 px-4 font-medium text-slate-900">Inquiries & Audits</td>
-                                    <td class="py-3 px-4">Name, Email, Phone, Company, Operational Notes</td>
-                                    <td class="py-3 px-4">24 Months from Last Touchpoint</td>
-                                    <td class="py-3 px-4 font-mono text-[11px] text-[#1E40AF]">DPDP Act Consent Baseline</td>
-                                </tr>
-                                <tr class="hover:bg-slate-50/50">
-                                    <td class="py-3 px-4 font-medium text-slate-900">Client Advisory</td>
-                                    <td class="py-3 px-4">Diagnostic Audits, Process Architecture, Workflows</td>
-                                    <td class="py-3 px-4">7 Years (Statutory Accounting & Legal)</td>
-                                    <td class="py-3 px-4 font-mono text-[11px] text-[#1E40AF]">Client MSA / DPA / Strict NDA</td>
-                                </tr>
-                                <tr class="hover:bg-slate-50/50">
-                                    <td class="py-3 px-4 font-medium text-slate-900">Candidate Network</td>
-                                    <td class="py-3 px-4">Resumes, GitHub, Code Submissions, Interviews</td>
-                                    <td class="py-3 px-4">12 Months (Active Talent Pool)</td>
-                                    <td class="py-3 px-4 font-mono text-[11px] text-[#1E40AF]">Right to Erasure Upon Request</td>
-                                </tr>
-                                <tr class="hover:bg-slate-50/50">
-                                    <td class="py-3 px-4 font-medium text-slate-900">Server Metadata</td>
-                                    <td class="py-3 px-4">IP Address, User Agent, Session Tokens</td>
-                                    <td class="py-3 px-4">90 Days Rolling Buffer</td>
-                                    <td class="py-3 px-4 font-mono text-[11px] text-[#1E40AF]">Zero-Knowledge Log Scrubbing</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
+            <a href="/philosophy/" class="mobile-nav-item">ABOUT OUR PHILOSOPHY</a>
+        </nav>
+        <div class="drawer-footer">
+            <button class="btn btn-pill-blue btn-full" data-modal-target="audit-modal">Book 30-Min Audit</button>
         </div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+
+        <!-- ─── 2. Main Executive Hero Section ─── -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="eyebrow-label">
+                        <span class="star-icon">✦</span> STRATEGIC AI CONSULTING &amp; OPERATIONAL IMPLEMENTATION
+                    </div>
+                    <h1 class="main-headline">We Put AI to Work Inside Your Operations.</h1>
+                    <p class="sub-headline">Most organizations don’t need more AI tools; they need fewer manual
+                        bottlenecks. Brownstone Consulting audits your daily business workflows, identifies lost hours,
+                        and embeds quiet, reliable AI systems into the software your team already uses.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-solid-blue" id="hero-primary-cta"
+                            data-modal-target="audit-modal">Schedule 30-Min Operational Audit</button>
+                        <a href="#editorial-grid" class="btn btn-outline-dark" id="hero-secondary-cta">Explore Business
+                            Outcomes <span class="arrow-down">↓</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── 3. Institutional 3-Column Editorial Grid ─── -->
+        <section class="editorial-section" id="editorial-grid">
+            <div class="editorial-container">
+                <div class="hairline-divider"></div>
+                <div class="grid-columns">
+
+                    <!-- Column 01 -->
+                    <article class="editorial-col" id="solutions">
+                        <div class="col-eyebrow">OPERATIONAL BOTTLENECK AUDIT</div>
+                        <h2 class="col-title">Where Your Team Leaks Core Productivity</h2>
+                        <p class="col-body">We map daily manual workflows across departments to pinpoint lost hours,
+                            delayed inquiries, and redundant data entry.</p>
+                        <a href="#" class="col-link" data-modal-target="paper-modal">Read Strategy Paper <span
+                                class="arrow-right">→</span></a>
+                    </article>
+
+                    <!-- Column 02 -->
+                    <article class="editorial-col" id="editorial-methodology">
+                        <div class="col-eyebrow">CUSTOM WORKFLOW INTEGRATION</div>
+                        <h2 class="col-title">Deploying Systems Without Operational Disruption</h2>
+                        <p class="col-body">We embed background automations directly inside your existing tools.</p>
+                        <a href="#" class="col-link" data-modal-target="methodology-modal">Explore Methodology <span
+                                class="arrow-right">→</span></a>
+                    </article>
+
+                    <!-- Column 03 -->
+                    <article class="editorial-col" id="outcomes">
+                        <div class="col-eyebrow">MEASURABLE BUSINESS OUTCOMES</div>
+                        <h2 class="col-title">Reclaiming 15+ Hours Per Employee Weekly</h2>
+                        <p class="col-body">Focus on bottom-line gains: instant lead qualification within 60 seconds and
+                            error-free execution on core business processes.</p>
+                        <a href="#" class="col-link" id="cases" data-modal-target="cases-modal">View Case Studies <span
+                                class="arrow-right">→</span></a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── 3.5 How Brownstone Works & AI Diagnostic Audit Section ─── -->
+        <section class="how-it-works-section" id="methodology">
+            <div class="how-it-works-container">
+
+                <!-- 1. Section Header -->
+                <div class="section-header-center">
+                    <div class="methodology-eyebrow">
+                        <span class="diamond-icon">◆</span> OUR METHODOLOGY // THE CLEAR PATH TO ROI
+                    </div>
+                    <h2 class="methodology-main-title">How Brownstone Consulting Works to Achieve Your Goals with
+                        Measurable Productivity &amp; ROI</h2>
+                    <p class="methodology-subtitle">We eliminate speculation and replace generic AI pitching with
+                        deterministic operational scoping. We identify your highest-leverage bottlenecks, evaluate API
+                        feasibility, and deliver an exact execution roadmap.</p>
+                </div>
+
+                <!-- 2. Layer 1: The AI Diagnostic Audit Hero Box -->
+                <div class="audit-hero-card">
+                    <!-- Top 2-Column Split Section -->
+                    <div class="audit-top-split">
+                        <!-- Left Column (7 cols text & guarantee) -->
+                        <div class="audit-left-content">
+                            <div class="audit-card-header" style="margin-bottom: 16px; padding-bottom: 0; border: none;">
+                                <div class="audit-badge">
+                                    <span class="audit-badge-dot"></span>
+                                    <span>THE AI DIAGNOSTIC AUDIT</span>
+                                </div>
+                                <div class="recommended-tag">[ RECOMMENDED START ]</div>
+                            </div>
+
+                            <div class="audit-pitch-block" style="margin-bottom: 20px;">
+                                <h3 class="audit-pitch-title">Know where automation drives ROI before you write a single line of code.</h3>
+                                <p class="audit-pitch-desc">A structured operational scoping session that produces a deterministic roadmap of where AI belongs—and where it doesn't.</p>
+                            </div>
+
+                            <div class="audit-trust-badge font-sans">
+                                <span class="doc-icon">📄</span>
+                                <span>Yours to keep. Build it with Brownstone, or hand it to your internal engineering team.</span>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT COLUMN: FOCUSED OPERATIONAL DIAGNOSTIC SESSION -->
+                        <div class="audit-right-graphic lg:col-span-5 flex justify-center items-center w-full">
+                            <div class="relative w-full max-w-[480px] aspect-[4/3] rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl shadow-slate-900/5 group" style="max-width: 480px; width: 100%; aspect-ratio: 4/3; position: relative; border-radius: 24px; overflow: hidden;">
+                                <!-- Main Image -->
+                                <img 
+                                    src="images/diagnostic-audit-consultation.jpg" 
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1000&auto=format&fit=crop';" 
+                                    alt="Senior leadership in focused diagnostic process architecture review" 
+                                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                    loading="eager"
+                                    style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                                />
+
+                                <!-- Gradient Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.6) 0%, transparent 60%); pointer-events: none;"></div>
+
+                                <!-- Top-Left Badge -->
+                                <div class="absolute top-3.5 left-3.5 z-10 px-3 py-1 rounded-lg bg-slate-900/85 backdrop-blur-md border border-white/15" style="position: absolute; top: 14px; left: 14px; z-index: 10; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.15);">
+                                    <span class="text-xs font-semibold text-white tracking-wide" style="font-size: 12px; font-weight: 600; color: #FFFFFF; letter-spacing: 0.025em;">
+                                        Operational Scoping Session
+                                    </span>
+                                </div>
+
+                                <!-- Bottom Floating Glass Card -->
+                                <div class="absolute bottom-3.5 left-3.5 right-3.5 z-10 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md" style="position: absolute; bottom: 14px; left: 14px; right: 14px; z-index: 10; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); padding: 14px; border-radius: 12px; border: 1px solid rgba(226, 232, 240, 0.9); box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                                    <div class="flex items-center justify-between gap-2" style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                                        <span class="text-xs font-bold text-slate-900" style="font-size: 12px; font-weight: 700; color: #0F172A;">
+                                            Root-Cause Process Mapping
+                                        </span>
+                                        <span class="text-[10px] font-semibold text-[#1E40AF] bg-blue-50 border border-blue-200 px-2 py-0.5 rounded shrink-0" style="font-size: 10px; font-weight: 600; color: #1E40AF; background: #EFF6FF; border: 1px solid #BFDBFE; padding: 2px 8px; border-radius: 4px; flex-shrink: 0;">
+                                            Deterministic ROI
+                                        </span>
+                                    </div>
+                                    <p class="text-[11px] text-slate-600 mt-1 leading-snug font-normal" style="font-size: 11px; color: #475569; margin-top: 4px; line-height: 1.375; font-weight: 400;">
+                                        Pinpointing manual bottlenecks and engineering feasibility before code commitment.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3-Step Process Grid -->
+                    <div class="audit-process-grid">
+                        <div class="audit-step-box">
+                            <div class="step-num-title">01. INTERVIEW (60 min)</div>
+                            <p class="step-desc">With the domain heads and operators who do the actual daily work.</p>
+                        </div>
+                        <div class="audit-step-box">
+                            <div class="step-num-title">02. BLUEPRINT REPORT</div>
+                            <p class="step-desc">Bottleneck audit, API feasibility map, and clear ROI model.</p>
+                        </div>
+                        <div class="audit-step-box">
+                            <div class="step-num-title">03. EXECUTIVE REVIEW (30 min)</div>
+                            <p class="step-desc">Walkthrough of the pilot plan, timeline, and definitive first production step.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bottom CTA Bar -->
+                    <div class="audit-footer-bar">
+                        <div class="font-mono text-xs font-bold text-blue tracking-wider" style="display: flex; items-center; gap: 8px;">
+                            <span>✦ 100% DETERMINISTIC SCOPING</span>
+                            <span style="color: #CBD5E1;">•</span>
+                            <span>NO CODE OBLIGATION</span>
+                        </div>
+                        <button class="btn btn-solid-blue audit-cta-btn" data-modal-target="audit-modal">
+                            Book a 30-Min Diagnostic Audit <span class="arrow-right">→</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3. Layer 2: 3 Delivery Pillars Grid -->
+                <div class="pillars-wrapper">
+                    <div class="pillars-header">
+                        <span class="pillars-eyebrow">✦ THREE DELIVERY PILLARS</span>
+                        <h3 class="pillars-title">End-to-End Execution Built for Governance &amp; Speed</h3>
+                    </div>
+
+                    <div class="pillars-3grid">
+                        <div class="pillar-card pillar-card-highlight">
+                            <div>
+                                <div class="pillar-card-top">
+                                    <span class="pillar-number">01</span>
+                                    <span class="pillar-tag">API &amp; WORKFLOW ENGINES</span>
+                                </div>
+                                <h4 class="pillar-card-title">Automate Workflows</h4>
+                                <p class="pillar-card-body">Event-driven API &amp; webhook triggers, real-time CRM &amp;
+                                    database enrichment, routine triage automated without human drag.</p>
+                            </div>
+                            <div class="pillar-card-footer font-mono">
+                                <span>CORE ACCELERATOR</span>
+                                <span>✦ ACTIVE</span>
+                            </div>
+                        </div>
+
+                        <div class="pillar-card pillar-card-highlight">
+                            <div>
+                                <div class="pillar-card-top">
+                                    <span class="pillar-number">02</span>
+                                    <span class="pillar-tag">PRIVATE &amp; SECURE LLMS</span>
+                                </div>
+                                <h4 class="pillar-card-title">Tailor Open Source Models</h4>
+                                <p class="pillar-card-body">Zero proprietary data leakage. Secure foundation models
+                                    fine-tuned on internal documentation under your governance.</p>
+                            </div>
+                            <div class="pillar-card-footer font-mono">
+                                <span>DATA ISOLATION</span>
+                                <span>100% PRIVATE</span>
+                            </div>
+                        </div>
+
+                        <div class="pillar-card pillar-card-highlight">
+                            <div>
+                                <div class="pillar-card-top">
+                                    <span class="pillar-number">03</span>
+                                    <span class="pillar-tag">ENTERPRISE OWNERSHIP</span>
+                                </div>
+                                <h4 class="pillar-card-title">Build Custom AI Apps</h4>
+                                <p class="pillar-card-body">Deterministic Human-in-the-loop queues, custom operational
+                                    dashboards, 100% client-owned codebase.</p>
+                            </div>
+                            <div class="pillar-card-footer font-mono">
+                                <span>CLIENT IP</span>
+                                <span>100% OWNED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Layer 3: Interactive Department Workflows (CometLab Precision Style) -->
+                <div class="workflow-engine-card">
+                    <div class="workflow-engine-header">
+                        <div>
+                            <div class="workflow-eyebrow">✦ INTERACTIVE WORKFLOW ARCHITECTURE</div>
+                            <h3 class="workflow-title">Departmental Workflow Execution</h3>
+                        </div>
+
+                        <!-- Tab Navigation Bar -->
+                        <div class="workflow-tab-bar" id="workflow-tabs">
+                            <button class="tab-btn active" data-tab="sales">[ Sales ]</button>
+                            <button class="tab-btn" data-tab="finance">[ Finance &amp; Risk ]</button>
+                            <button class="tab-btn" data-tab="it">[ Operations &amp; IT ]</button>
+                            <button class="tab-btn" data-tab="cx">[ Customer Experience ]</button>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Description Banner -->
+                    <div class="workflow-desc-banner" id="workflow-desc-banner">
+                        <p class="workflow-desc-text" id="workflow-desc-text">Accelerate lead triage from hours to
+                            seconds with automated API enrichment and CRM synchronization.</p>
+                        <span class="workflow-badge-tag" id="workflow-badge-tag">AUTOMATED INBOUND QUALIFICATION</span>
+                    </div>
+
+                    <!-- Flowchart Node Engine Container -->
+                    <div class="flowchart-engine" id="flowchart-engine">
+                        <div class="flowchart-nodes" id="flowchart-nodes">
+                            <!-- Nodes dynamically populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ─── Section 04: Connected to Your Stack (Infinite Moving Marquee) ─── -->
+        <section class="stack-marquee-section" id="connected-stack">
+            <div class="stack-container">
+                <h2 class="stack-main-title">
+                    Connected to what <span class="text-blue-highlight">you already run.</span>
+                </h2>
+                <p class="stack-subtitle">
+                    Anything with an API connects directly. The rest connects through browser automation, AWS serverless
+                    micro-services, or secure database connectors.
+                </p>
+            </div>
+
+            <!-- Multi-Row Marquee Rails -->
+            <div class="marquee-stack-wrapper">
+                <!-- Row 1: Left to Right -->
+                <div class="marquee-track-container">
+                    <div class="marquee-track marquee-normal">
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64" class="tool-logo" alt="Amazon Web Services" width="18" height="18"><span>Amazon Web Services</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64" class="tool-logo" alt="AWS Lambda" width="18" height="18"><span>AWS Lambda</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64" class="tool-logo" alt="Amazon Bedrock" width="18" height="18"><span>Amazon Bedrock</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=azure.microsoft.com&sz=64" class="tool-logo" alt="Microsoft Azure" width="18" height="18"><span>Microsoft Azure</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=cloud.google.com&sz=64" class="tool-logo" alt="Google Cloud" width="18" height="18"><span>Google Cloud</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=64" class="tool-logo" alt="ChatGPT (OpenAI)" width="18" height="18"><span>ChatGPT (OpenAI)</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" class="tool-logo" alt="Claude (Anthropic)" width="18" height="18"><span>Claude (Anthropic)</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=64" class="tool-logo" alt="DeepSeek" width="18" height="18"><span>DeepSeek</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=moonshot.cn&sz=64" class="tool-logo" alt="Kimi AI" width="18" height="18"><span>Kimi AI</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=workspace.google.com&sz=64" class="tool-logo" alt="Google Workspace" width="18" height="18"><span>Google Workspace</span></div>
+                        <!-- duplicate -->
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64" class="tool-logo" alt="Amazon Web Services" width="18" height="18"><span>Amazon Web Services</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64" class="tool-logo" alt="AWS Lambda" width="18" height="18"><span>AWS Lambda</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=aws.amazon.com&sz=64" class="tool-logo" alt="Amazon Bedrock" width="18" height="18"><span>Amazon Bedrock</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=azure.microsoft.com&sz=64" class="tool-logo" alt="Microsoft Azure" width="18" height="18"><span>Microsoft Azure</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=cloud.google.com&sz=64" class="tool-logo" alt="Google Cloud" width="18" height="18"><span>Google Cloud</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=64" class="tool-logo" alt="ChatGPT (OpenAI)" width="18" height="18"><span>ChatGPT (OpenAI)</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=anthropic.com&sz=64" class="tool-logo" alt="Claude (Anthropic)" width="18" height="18"><span>Claude (Anthropic)</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=deepseek.com&sz=64" class="tool-logo" alt="DeepSeek" width="18" height="18"><span>DeepSeek</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=moonshot.cn&sz=64" class="tool-logo" alt="Kimi AI" width="18" height="18"><span>Kimi AI</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=workspace.google.com&sz=64" class="tool-logo" alt="Google Workspace" width="18" height="18"><span>Google Workspace</span></div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Right to Left -->
+                <div class="marquee-track-container">
+                    <div class="marquee-track marquee-reverse">
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=postgresql.org&sz=64" class="tool-logo" alt="PostgreSQL" width="18" height="18"><span>PostgreSQL (pgvector)</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=snowflake.com&sz=64" class="tool-logo" alt="Snowflake" width="18" height="18"><span>Snowflake</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=databricks.com&sz=64" class="tool-logo" alt="Databricks" width="18" height="18"><span>Databricks</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=pinecone.io&sz=64" class="tool-logo" alt="Pinecone" width="18" height="18"><span>Pinecone</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=opensearch.org&sz=64" class="tool-logo" alt="Amazon OpenSearch" width="18" height="18"><span>Amazon OpenSearch</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=salesforce.com&sz=64" class="tool-logo" alt="Salesforce" width="18" height="18"><span>Salesforce</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=sap.com&sz=64" class="tool-logo" alt="SAP ERP" width="18" height="18"><span>SAP ERP</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=hubspot.com&sz=64" class="tool-logo" alt="HubSpot" width="18" height="18"><span>HubSpot</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=office.com&sz=64" class="tool-logo" alt="Microsoft 365" width="18" height="18"><span>Microsoft 365</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=teams.microsoft.com&sz=64" class="tool-logo" alt="Microsoft Teams" width="18" height="18"><span>Microsoft Teams</span></div>
+                        <!-- duplicate -->
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=postgresql.org&sz=64" class="tool-logo" alt="PostgreSQL" width="18" height="18"><span>PostgreSQL (pgvector)</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=snowflake.com&sz=64" class="tool-logo" alt="Snowflake" width="18" height="18"><span>Snowflake</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=databricks.com&sz=64" class="tool-logo" alt="Databricks" width="18" height="18"><span>Databricks</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=pinecone.io&sz=64" class="tool-logo" alt="Pinecone" width="18" height="18"><span>Pinecone</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=opensearch.org&sz=64" class="tool-logo" alt="Amazon OpenSearch" width="18" height="18"><span>Amazon OpenSearch</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=salesforce.com&sz=64" class="tool-logo" alt="Salesforce" width="18" height="18"><span>Salesforce</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=sap.com&sz=64" class="tool-logo" alt="SAP ERP" width="18" height="18"><span>SAP ERP</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=hubspot.com&sz=64" class="tool-logo" alt="HubSpot" width="18" height="18"><span>HubSpot</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=office.com&sz=64" class="tool-logo" alt="Microsoft 365" width="18" height="18"><span>Microsoft 365</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=teams.microsoft.com&sz=64" class="tool-logo" alt="Microsoft Teams" width="18" height="18"><span>Microsoft Teams</span></div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Left to Right -->
+                <div class="marquee-track-container">
+                    <div class="marquee-track marquee-normal">
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" class="tool-logo" alt="n8n" width="18" height="18"><span>n8n</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=64" class="tool-logo" alt="Make.com" width="18" height="18"><span>Make.com</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=meta.com&sz=64" class="tool-logo" alt="Meta" width="18" height="18"><span>Meta</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=64" class="tool-logo" alt="LinkedIn" width="18" height="18"><span>LinkedIn</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=stripe.com&sz=64" class="tool-logo" alt="Stripe" width="18" height="18"><span>Stripe</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=razorpay.com&sz=64" class="tool-logo" alt="Razorpay" width="18" height="18"><span>Razorpay</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=slack.com&sz=64" class="tool-logo" alt="Slack" width="18" height="18"><span>Slack</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=zendesk.com&sz=64" class="tool-logo" alt="Zendesk" width="18" height="18"><span>Zendesk</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=atlassian.com&sz=64" class="tool-logo" alt="Jira" width="18" height="18"><span>Jira</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=linear.app&sz=64" class="tool-logo" alt="Linear" width="18" height="18"><span>Linear</span></div>
+                        <!-- duplicate -->
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=n8n.io&sz=64" class="tool-logo" alt="n8n" width="18" height="18"><span>n8n</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=make.com&sz=64" class="tool-logo" alt="Make.com" width="18" height="18"><span>Make.com</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=meta.com&sz=64" class="tool-logo" alt="Meta" width="18" height="18"><span>Meta</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=64" class="tool-logo" alt="LinkedIn" width="18" height="18"><span>LinkedIn</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=stripe.com&sz=64" class="tool-logo" alt="Stripe" width="18" height="18"><span>Stripe</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=razorpay.com&sz=64" class="tool-logo" alt="Razorpay" width="18" height="18"><span>Razorpay</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=slack.com&sz=64" class="tool-logo" alt="Slack" width="18" height="18"><span>Slack</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=zendesk.com&sz=64" class="tool-logo" alt="Zendesk" width="18" height="18"><span>Zendesk</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=atlassian.com&sz=64" class="tool-logo" alt="Jira" width="18" height="18"><span>Jira</span></div>
+                        <div class="stack-pill"><img src="https://www.google.com/s2/favicons?domain=linear.app&sz=64" class="tool-logo" alt="Linear" width="18" height="18"><span>Linear</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── Section 05: The Process (Editorial Delivery Lifecycle Ledger) ─── -->
+        <section class="process-ledger-section" id="process" style="background: #F8FAFC; padding: 80px 0; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0;">
+            <div class="process-container" style="max-w: 1140px; margin: 0 auto; padding: 0 24px;">
+                <div class="process-header-block" style="max-w: 768px; margin-bottom: 48px;">
+                    <div class="font-mono text-xs font-bold text-blue tracking-wider" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <span style="width: 8px; height: 8px; border-radius: 50%; background: #1E40AF; display: inline-block;"></span>
+                        <span>THREE-PHASE DELIVERY LIFECYCLE</span>
+                    </div>
+                    <h2 class="process-main-title">
+                        Built with your team, <span class="text-blue-highlight">in short cycles.</span> Live, documented, and handed over.
+                    </h2>
+                    <p class="process-subtitle">
+                        We don't leave you with slide decks or opaque black boxes. Every engagement follows a disciplined 3-phase delivery ledger with complete code ownership, operator training, and transparent governance.
+                    </p>
+                </div>
+
+                <!-- 3 High-Trust Visual Consulting Case Cards Stack -->
+                <div class="ledger-case-cards-wrapper" style="display: flex; flex-direction: column; gap: 32px;">
+                    <!-- Case Card 01 -->
+                    <div class="process-case-card" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04); transition: all 0.3s ease; font-family: var(--font-sans, system-ui, sans-serif);">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: center;">
+                            <!-- Image Container -->
+                            <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; height: 230px;">
+                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80" alt="Listen &amp; Diagnose" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.5) 0%, transparent 60%); pointer-events: none;"></div>
+                                
+                                <!-- Top Overlay Badge -->
+                                <div style="position: absolute; top: 14px; left: 14px; background: rgba(15, 23, 42, 0.85); color: #FFFFFF; backdrop-filter: blur(8px); font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                                    <span>Step 1: Operational Discovery</span>
+                                </div>
+
+                                <!-- Bottom Telemetry Pill -->
+                                <div style="position: absolute; bottom: 14px; right: 14px; background: rgba(255, 255, 255, 0.95); color: #0F172A; backdrop-filter: blur(8px); font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 6px;">
+                                    <span style="color: #1E40AF;">✦</span>
+                                    <span>Zero Assumptions • Ground-Truth Scoping</span>
+                                </div>
+                            </div>
+
+                            <!-- Text Content -->
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                                    <span style="font-family: var(--font-sans, system-ui, sans-serif); font-size: 24px; font-weight: 700; color: #1E40AF;">01</span>
+                                    <span style="color: #CBD5E1;">•</span>
+                                    <span style="font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; color: #1E40AF; tracking-wide; text-transform: uppercase;">OPERATIONAL BOTTLENECK AUDIT</span>
+                                </div>
+                                <h3 style="font-size: 24px; font-weight: 700; color: #0F172A; margin-bottom: 12px;">Listen &amp; Diagnose</h3>
+                                <p style="color: #475569; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">We sit with the people who do the actual daily work and map how each process runs, where data gets trapped, and where your team loses billable hours.</p>
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 16px; border-top: 1px solid #F1F5F9; font-family: var(--font-sans, system-ui, sans-serif);">
+                                    <span style="font-size: 12px; font-weight: 600; color: #1E40AF; background: #EFF6FF; border: 1px solid #BFDBFE; padding: 6px 12px; border-radius: 6px;">✦ 60-Min Scoping Session</span>
+                                    <span style="font-size: 12px; font-weight: 500; color: #334155; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px;">Strict Governance</span>
+                                    <span style="font-size: 12px; font-weight: 500; color: #334155; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px;">Production Ready</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Card 02 -->
+                    <div class="process-case-card" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04); transition: all 0.3s ease; font-family: var(--font-sans, system-ui, sans-serif);">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: center;">
+                            <!-- Image Container -->
+                            <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; height: 230px;">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="Architect &amp; Build in Sprints" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.5) 0%, transparent 60%); pointer-events: none;"></div>
+                                
+                                <!-- Top Overlay Badge -->
+                                <div style="position: absolute; top: 14px; left: 14px; background: rgba(15, 23, 42, 0.85); color: #FFFFFF; backdrop-filter: blur(8px); font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                                    <span>Step 2: Rapid Prototyping</span>
+                                </div>
+
+                                <!-- Bottom Telemetry Pill -->
+                                <div style="position: absolute; bottom: 14px; right: 14px; background: rgba(255, 255, 255, 0.95); color: #0F172A; backdrop-filter: blur(8px); font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 6px;">
+                                    <span style="color: #1E40AF;">✦</span>
+                                    <span>2-Week Cycles • Live Sandbox Environment</span>
+                                </div>
+                            </div>
+
+                            <!-- Text Content -->
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                                    <span style="font-family: var(--font-sans, system-ui, sans-serif); font-size: 24px; font-weight: 700; color: #1E40AF;">02</span>
+                                    <span style="color: #CBD5E1;">•</span>
+                                    <span style="font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; color: #1E40AF; tracking-wide; text-transform: uppercase;">14-DAY TESTABLE PILOT PIPELINE</span>
+                                </div>
+                                <h3 style="font-size: 24px; font-weight: 700; color: #0F172A; margin-bottom: 12px;">Architect &amp; Build in Sprints</h3>
+                                <p style="color: #475569; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">We engineer in rapid, 2-week iterations with your technical stakeholders reviewing each build. A functional, testable pipeline runs within the first 14 days.</p>
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 16px; border-top: 1px solid #F1F5F9; font-family: var(--font-sans, system-ui, sans-serif);">
+                                    <span style="font-size: 12px; font-weight: 600; color: #1E40AF; background: #EFF6FF; border: 1px solid #BFDBFE; padding: 6px 12px; border-radius: 6px;">✦ 2-Week Rapid Iterations</span>
+                                    <span style="font-size: 12px; font-weight: 500; color: #334155; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px;">Sandbox Testing</span>
+                                    <span style="font-size: 12px; font-weight: 500; color: #334155; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px;">Iterative Review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Case Card 03 -->
+                    <div class="process-case-card" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; box-shadow: 0 2px 4px rgba(15, 23, 42, 0.04); transition: all 0.3s ease; font-family: var(--font-sans, system-ui, sans-serif);">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; align-items: center;">
+                            <!-- Image Container -->
+                            <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; height: 230px;">
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" alt="Deploy, Document &amp; Hand Over" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.5) 0%, transparent 60%); pointer-events: none;"></div>
+                                
+                                <!-- Top Overlay Badge -->
+                                <div style="position: absolute; top: 14px; left: 14px; background: rgba(15, 23, 42, 0.85); color: #FFFFFF; backdrop-filter: blur(8px); font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                                    <span>Step 3: Enterprise Handover</span>
+                                </div>
+
+                                <!-- Bottom Telemetry Pill -->
+                                <div style="position: absolute; bottom: 14px; right: 14px; background: rgba(255, 255, 255, 0.95); color: #0F172A; backdrop-filter: blur(8px); font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 6px;">
+                                    <span style="color: #1E40AF;">✦</span>
+                                    <span>100% Code Ownership • In-House Governance</span>
+                                </div>
+                            </div>
+
+                            <!-- Text Content -->
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+                                    <span style="font-family: var(--font-sans, system-ui, sans-serif); font-size: 24px; font-weight: 700; color: #1E40AF;">03</span>
+                                    <span style="color: #CBD5E1;">•</span>
+                                    <span style="font-family: var(--font-sans, system-ui, sans-serif); font-size: 12px; font-weight: 600; color: #1E40AF; tracking-wide; text-transform: uppercase;">FULL SOURCE CODE &amp; INFRASTRUCTURE OWNERSHIP</span>
+                                </div>
+                                <h3 style="font-size: 24px; font-weight: 700; color: #0F172A; margin-bottom: 12px;">Deploy, Document &amp; Hand Over</h3>
+                                <p style="color: #475569; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">The finished system deploys directly inside your cloud infrastructure (AWS/Azure/Private Cloud), fully documented with source code, CI/CD pipelines, and your internal operators trained to run it.</p>
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 16px; border-top: 1px solid #F1F5F9; font-family: var(--font-sans, system-ui, sans-serif);">
+                                    <span style="font-size: 12px; font-weight: 600; color: #1E40AF; background: #EFF6FF; border: 1px solid #BFDBFE; padding: 6px 12px; border-radius: 6px;">✦ 100% Client Ownership</span>
+                                    <span style="font-size: 12px; font-weight: 500; color: #334155; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px;">Full Source Code</span>
+                                    <span style="font-size: 12px; font-weight: 500; color: #334155; background: #F8FAFC; border: 1px solid #E2E8F0; padding: 6px 12px; border-radius: 6px;">Operator Training</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── 4. Executive Video Walkthrough Section ─── -->
+        <section class="diagnostic-section" id="executive-walkthrough">
+            <div class="diagnostic-container">
+
+                <!-- Section Header -->
+                <div class="section-header-center">
+                    <div class="diagnostic-eyebrow">
+                        <span class="diamond-icon">◆</span> APPLIED DIAGNOSTIC DIALOGUE
+                    </div>
+                    <h2 class="diagnostic-title">How a Brownstone Engagement Actually Unfolds.</h2>
+                    <p class="diagnostic-subtitle">We replace speculative AI feature pitching with high-precision
+                        bottleneck diagnosis. Here is how our operational partners interface with enterprise executive
+                        teams.</p>
+                </div>
+
+                <!-- 16:9 Executive Video Walkthrough Player -->
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 my-10">
+                    <div class="relative w-full aspect-video rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/90 shadow-2xl bg-black" style="position: relative; width: 100%; aspect-ratio: 16 / 9; background-color: #000000; border-radius: 1.5rem; overflow: hidden;">
+                        <iframe 
+                            class="absolute inset-0 w-full h-full border-0 rounded-2xl sm:rounded-3xl"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 1.5rem;"
+                            src="https://www.youtube-nocookie.com/embed/k1BjvLdkhbc?rel=0&modestbranding=1&controls=1" 
+                            title="How a Brownstone Engagement Actually Unfolds | Brownstone Consulting" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <!-- ─── Institutional-Grade Royal Navy Footer ─── -->
-    <footer style="background: linear-gradient(180deg, #070F1E 0%, #0A192F 50%, #050B14 100%); color: #94A3B8; font-family: var(--font-sans, system-ui, sans-serif); border-top: 1px solid rgba(30, 64, 175, 0.4); position: relative; overflow: hidden;" class="w-full bg-gradient-to-b from-[#070F1E] via-[#0A192F] to-[#050B14] text-slate-300 border-t border-blue-900/40 font-sans relative overflow-hidden">
+    <footer style="background: linear-gradient(180deg, #070F1E 0%, #0A192F 50%, #050B14 100%); color: #94A3B8; font-family: var(--font-sans, system-ui, sans-serif); border-top: 1px solid rgba(30, 64, 175, 0.4); position: relative; overflow: hidden;">
         <div style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 48px; position: relative; z-index: 10;">
             <!-- Section 1: 5-Column Grid Layout (12 Cols) -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 36px;" class="footer-grid">
                 <!-- Column 1: Brand & Direct Outreach (Span 2) -->
                 <div style="grid-column: span 2;">
-                    <a href="/" class="inline-block select-none mb-3 hover:opacity-95 transition-opacity" style="text-decoration: none !important; display: block;">
+                    <a href="index.html" class="inline-block select-none mb-3 hover:opacity-95 transition-opacity" style="text-decoration: none !important; display: block;">
                       <span style="
                         font-family: 'Cinzel', 'Times New Roman', Georgia, serif !important;
                         font-size: 20px !important;
@@ -255,7 +746,7 @@
                     <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 12px;">
                         <li><a href="/#methodology" style="color: #94A3B8; text-decoration: none;">Our Methodology</a></li>
                         <li><a href="/philosophy/" style="color: #94A3B8; text-decoration: none;">About Our Philosophy</a></li>
-                        <li><a href="/careers/" style="color: #94A3B8; text-decoration: none; display: inline-flex; align-items: center;">Careers <span style="margin-left: 6px; padding: 2px 6px; font-size: 10px; font-weight: 600; color: #93C5FD; background: rgba(30,58,138,0.8); border: 1px solid rgba(30,64,175,0.6); border-radius: 4px;">HIRING</span></a></li>
+                        <li><a href="/careers/" style="color: #94A3B8; text-decoration: none; display: inline-flex; align-items: center;">Careers <span style="margin-left: 6px; padding: 2px 6px; font-size: 10px; font-weight: 600; color: #93C5FD; background: rgba(30,58,138,0.8); border: 1px solid rgba(30,64,175,0.6); border-radius: 4px;">Hiring</span></a></li>
                     </ul>
                 </div>
 
@@ -283,7 +774,7 @@
                             Speak directly with a Senior Managing Partner. Confidential diagnostic review with strict NDA compliance.
                         </p>
 
-                        <a href="/#audit" class="btn btn-solid-blue bg-[#1E40AF] text-white font-semibold shadow-md hover:bg-blue-700 transition-colors" style="background-color: #1E40AF !important; color: #FFFFFF !important; font-weight: 600 !important; font-size: 12px; width: 100%; justify-content: center; padding: 10px 16px; border-radius: 10px; margin-bottom: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); cursor: pointer;">Schedule Audit Session →</a>
+                        <button class="btn btn-solid-blue bg-[#1E40AF] text-white font-semibold shadow-md hover:bg-blue-700 transition-colors" data-modal-target="audit-modal" style="background-color: #1E40AF !important; color: #FFFFFF !important; font-weight: 600 !important; font-size: 12px; width: 100%; justify-content: center; padding: 10px 16px; border-radius: 10px; margin-bottom: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); cursor: pointer;">Schedule Audit Session →</button>
 
                         <div style="font-size: 11px; color: #94A3B8; display: flex; align-items: center; gap: 6px; padding-top: 8px; border-top: 1px solid rgba(30, 64, 175, 0.3);">
                             <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#60A5FA" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -319,5 +810,180 @@
             </div>
         </div>
     </footer>
+
+    <!-- ─── Interactive Operational Audit Modal ─── -->
+    <div class="modal-backdrop" id="audit-modal" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="modal-audit-title">
+        <div class="modal-window">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-eyebrow">✦ INSTITUTIONAL ASSESSMENT</div>
+                <h3 class="modal-title" id="modal-audit-title">Schedule 30-Min Operational Audit</h3>
+                <p class="modal-desc">Speak directly with a senior managing partner to diagnose workflow friction,
+                    manual overhead, and automation opportunities in your enterprise software suite.</p>
+            </div>
+            <form id="auditForm" class="audit-form space-y-4">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="auditFullName">Full Name</label>
+                        <input type="text" id="auditFullName" name="fullName" placeholder="e.g. Eleanor Vance" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="auditEmail">Work Email</label>
+                        <input type="email" id="auditEmail" name="workEmail" placeholder="eleanor@enterprise.com" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="auditCompany">Company Name</label>
+                        <input type="text" id="auditCompany" name="companyName" placeholder="Acme Holdings Corp." required>
+                    </div>
+                    <div class="form-field">
+                        <label for="auditTeamSize">Department / Team Size</label>
+                        <select id="auditTeamSize" name="teamSize" required>
+                            <option value="" disabled selected>Select size</option>
+                            <option value="20-50">20 – 50 team members</option>
+                            <option value="50-250">50 – 250 team members</option>
+                            <option value="250-1000">250 – 1,000 team members</option>
+                            <option value="1000+">1,000+ team members</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-field full-width">
+                    <label for="auditBottleneck">Primary Bottleneck / Priority Area</label>
+                    <textarea id="auditBottleneck" name="bottleneck" rows="3"
+                        placeholder="Describe manual processes, redundant data entry, or communication delays..." required></textarea>
+                </div>
+                <button type="submit" id="auditSubmitBtn" class="btn btn-solid-blue btn-full">Submit Operational Audit Request</button>
+                <p id="auditStatusMsg" class="text-xs text-center font-medium mt-2 hidden"></p>
+                <div class="form-security-note">✦ Confidential institutional review. Strict NDA compliance.</div>
+            </form>
+            <div class="modal-thankyou" id="audit-thankyou" style="display: none;">
+                <div class="thankyou-badge">✓</div>
+                <h3>Audit Session Request Confirmed</h3>
+                <p>A Senior Director from Brownstone Consulting will review your workflow parameters and reach out
+                    within 2 business hours with calendar invites.</p>
+                <button class="btn btn-outline-dark modal-dismiss">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Interactive Strategy Paper Modal ─── -->
+    <div class="modal-backdrop" id="paper-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-window modal-window-wide">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-eyebrow">OPERATIONAL BOTTLENECK AUDIT</div>
+                <h3 class="modal-title">Where Your Team Leaks Core Productivity</h3>
+            </div>
+            <div class="paper-body">
+                <p class="paper-lead">Enterprise software proliferation has created an unintended crisis: staff spend up
+                    to 35% of their working hours transferring data, chasing status updates, and manually validating
+                    cross-system entries.</p>
+                <div class="paper-grid">
+                    <div class="paper-stat-box">
+                        <span class="stat-num">34%</span>
+                        <span class="stat-lbl">Time lost to manual workflow loops</span>
+                    </div>
+                    <div class="paper-stat-box">
+                        <span class="stat-num">&lt;60s</span>
+                        <span class="stat-lbl">Target automated qualification speed</span>
+                    </div>
+                    <div class="paper-stat-box">
+                        <span class="stat-num">15+ hrs</span>
+                        <span class="stat-lbl">Weekly capacity reclaimed per headcount</span>
+                    </div>
+                </div>
+                <p>Our audit maps these exact leakage points across your operations before a single line of code is
+                    written, ensuring targeted, measurable ROI.</p>
+            </div>
+            <div class="modal-actions-bar">
+                <button class="btn btn-solid-blue" data-modal-switch="audit-modal">Schedule 30-Min Operational
+                    Audit</button>
+                <button class="btn btn-outline-dark modal-dismiss">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Interactive Methodology Modal ─── -->
+    <div class="modal-backdrop" id="methodology-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-window modal-window-wide">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-eyebrow">CUSTOM WORKFLOW INTEGRATION</div>
+                <h3 class="modal-title">Deploying Systems Without Operational Disruption</h3>
+            </div>
+            <div class="paper-body">
+                <p class="paper-lead">Traditional software implementation fails because it demands extensive retraining.
+                    Brownstone embeds intelligent automations directly into your team's current workspace.</p>
+                <div class="methodology-timeline">
+                    <div class="timeline-step">
+                        <span class="step-num">01</span>
+                        <div class="step-content">
+                            <h4>Workflow &amp; API Discovery</h4>
+                            <p>Non-invasive mapping of existing toolchains (Salesforce, Hubspot, Jira, custom ERPs) and
+                                security boundaries.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <span class="step-num">02</span>
+                        <div class="step-content">
+                            <h4>Quiet Automation Layer</h4>
+                            <p>Deploying event-driven micro-agents that run silently in background pipelines without
+                                altering existing UI workflows.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <span class="step-num">03</span>
+                        <div class="step-content">
+                            <h4>Verification &amp; Governance</h4>
+                            <p>Implementing human-in-the-loop validation triggers for exception handling and critical
+                                compliance control.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions-bar">
+                <button class="btn btn-solid-blue" data-modal-switch="audit-modal">Schedule 30-Min Operational
+                    Audit</button>
+                <button class="btn btn-outline-dark modal-dismiss">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Interactive Case Studies Modal ─── -->
+    <div class="modal-backdrop" id="cases-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="modal-window modal-window-wide">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-eyebrow">MEASURABLE BUSINESS OUTCOMES</div>
+                <h3 class="modal-title">Reclaiming 15+ Hours Per Employee Weekly</h3>
+            </div>
+            <div class="paper-body">
+                <div class="case-study-cards">
+                    <div class="case-card">
+                        <div class="case-industry">Global Supply Logistics</div>
+                        <h4>Instant Lead Qualification &amp; Routing</h4>
+                        <p>Implemented AI lead enrichment and qualification within 45 seconds of form submission.
+                            Increased inbound sales meeting conversion by 31% within 90 days.</p>
+                        <div class="case-metric">✦ 18.5 hrs saved weekly per account director</div>
+                    </div>
+                    <div class="case-card">
+                        <div class="case-industry">Commercial Real Estate Advisory</div>
+                        <h4>Automated Due Diligence Extraction</h4>
+                        <p>Embedded background extraction agent that compiles property lease terms into standardized
+                            underwriting models automatically.</p>
+                        <div class="case-metric">✦ 99.4% parsing accuracy across 4,000+ contracts</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-actions-bar">
+                <button class="btn btn-solid-blue" data-modal-switch="audit-modal">Schedule 30-Min Operational
+                    Audit</button>
+                <button class="btn btn-outline-dark modal-dismiss">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
