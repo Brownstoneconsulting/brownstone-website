@@ -1,0 +1,553 @@
+﻿---
+permalink: /about/
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description"
+        content="Most AI Projects Fail Because They Try to Replace People Instead of Removing Friction — Our Operational Philosophy at Brownstone Consulting.">
+    <title>About Our Philosophy — Brownstone Consulting</title>
+
+    <!-- Google Fonts & Brand Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      .font-brand {
+        font-family: 'Cinzel', Georgia, serif !important;
+        letter-spacing: 0.22em !important;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <!-- ─── 1. Header Navigation Bar (Fixed Top) ─── -->
+    <header class="site-header" id="site-header">
+        <div class="header-container">
+            <a href="/" class="inline-block select-none py-1 hover:opacity-95 transition-opacity" style="text-decoration: none !important;">
+              <span style="
+                font-family: 'Cinzel', 'Times New Roman', Georgia, serif;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 0.18em;
+                color: #0B192C !important;
+                text-transform: uppercase;
+                display: inline-block;
+                line-height: 1;
+                -webkit-text-fill-color: #0B192C !important;
+              ">
+                BROWNSTONE CONSULTING
+              </span>
+            </a>
+
+            <nav class="center-nav" aria-label="Primary Navigation">
+                <a href="/" class="nav-item">HOME</a>
+                <a href="/#methodology" class="nav-item">HOW WE WORK</a>
+
+                <!-- Focus Areas Interactive Dropdown -->
+                <div class="nav-dropdown-wrapper" id="focus-areas-dropdown">
+                    <button class="nav-item dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+                        <span>FOCUS AREAS</span>
+                        <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="nav-dropdown-menu" role="menu">
+                        <div class="dropdown-header font-mono">FUNCTIONAL DEPARTMENT SPECIALIZATIONS</div>
+
+                        <a href="/sales-operations/" class="dropdown-item" role="menuitem" id="nav-sales-ops">
+                            <div class="item-text-block">
+                                <div class="item-title">Sales &amp; Operations (S&amp;OP)</div>
+                                <div class="item-desc">Autonomous lead triage, real-time inventory validation &amp; 1-click CRM sync</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+
+                        <a href="/it-operations/" class="dropdown-item" role="menuitem" id="nav-it-ops">
+                            <div class="item-text-block">
+                                <div class="item-title">IT &amp; Technical Operations</div>
+                                <div class="item-desc">Self-resolving access requests, ticket triage &amp; human-supervised serverless fixes</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+
+                        <a href="/finance-compliance/" class="dropdown-item" role="menuitem"
+                            id="nav-finance-compliance">
+                            <div class="item-text-block">
+                                <div class="item-title">Finance &amp; Compliance</div>
+                                <div class="item-desc">Continuous SEBI audit readiness, invoice matching &amp; automated approval controls</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+
+                        <a href="/growth-marketing/" class="dropdown-item" role="menuitem"
+                            id="nav-growth-marketing">
+                            <div class="item-text-block">
+                                <div class="item-title">Growth &amp; Marketing Operations</div>
+                                <div class="item-desc">Direct client acquisition &amp; automated WhatsApp triage using your daily tools</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+
+                        <a href="/hr-talent/" class="dropdown-item" role="menuitem" id="nav-hr-talent">
+                            <div class="item-text-block">
+                                <div class="item-title">HR &amp; Talent Management</div>
+                                <div class="item-desc">Top 5% resume match scoring, calendar scheduling &amp; 24/7 internal policy assistant</div>
+                            </div>
+                            <span class="item-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="/philosophy/" class="nav-item text-blue font-bold">ABOUT OUR PHILOSOPHY</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="/#audit" class="btn btn-pill-blue" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Book 30â€“Min Audit</a>
+                <button class="mobile-toggle" id="mobile-menu-btn" data-drawer-target="mobile-drawer" aria-label="Toggle Menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <div class="drawer-header">
+            <span class="brand-text">BROWNSTONE</span>
+            <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+        </div>
+        <nav class="mobile-nav" aria-label="Mobile Navigation">
+            <a href="/" class="mobile-nav-item">HOME</a>
+            <a href="/#methodology" class="mobile-nav-item">HOW WE WORK</a>
+            <div class="mobile-nav-group">
+                <div class="mobile-group-title font-mono">FUNCTIONAL SPECIALIZATIONS</div>
+                <a href="/sales-operations/" class="mobile-nav-subitem">
+                    <span class="subitem-title">Sales &amp; Operations (S&amp;OP)</span>
+                    <span class="subitem-desc">Autonomous lead triage, real-time inventory validation &amp; 1-click CRM sync</span>
+                </a>
+                <a href="/it-operations/" class="mobile-nav-subitem">
+                    <span class="subitem-title">IT &amp; Technical Operations</span>
+                    <span class="subitem-desc">Self-resolving access requests, ticket triage &amp; human-supervised serverless fixes</span>
+                </a>
+                <a href="/finance-compliance/" class="mobile-nav-subitem">
+                    <span class="subitem-title">Finance &amp; Compliance</span>
+                    <span class="subitem-desc">Continuous SEBI audit readiness, invoice matching &amp; automated approval controls</span>
+                </a>
+                <a href="/growth-marketing/" class="mobile-nav-subitem">
+                    <span class="subitem-title">Growth &amp; Marketing Operations</span>
+                    <span class="subitem-desc">Direct client acquisition &amp; automated WhatsApp triage using your daily tools</span>
+                </a>
+                <a href="/hr-talent/" class="mobile-nav-subitem">
+                    <span class="subitem-title">HR &amp; Talent Management</span>
+                    <span class="subitem-desc">Top 5% resume match scoring, calendar scheduling &amp; 24/7 internal policy assistant</span>
+                </a>
+            </div>
+            <a href="/philosophy/" class="mobile-nav-item text-blue font-bold">ABOUT OUR PHILOSOPHY</a>
+        </nav>
+        <div class="drawer-footer">
+            <a href="/#audit" class="btn btn-pill-blue btn-full" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Book 30â€“Min Audit</a>
+        </div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <main class="main-wrapper">
+
+        <!-- ─── Executive Hero Section ─── -->
+        <section class="sop-hero-section" style="padding-top: 120px; padding-bottom: 60px;">
+            <div class="sop-container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+                <div class="breadcrumb-trail font-sans" style="margin-bottom: 24px;">
+                    <a href="/">HOME</a> <span>/</span>
+                    <span class="text-blue">ABOUT OUR PHILOSOPHY</span>
+                </div>
+
+                <!-- 2-Column Split Hero Layout -->
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center;" class="hero-split-grid">
+                    <!-- Left Column: Text Content & CTAs -->
+                    <div>
+                        <div class="specialization-badge font-sans" style="margin-bottom: 20px;">✦ OUR OPERATIONAL FOUNDATION</div>
+
+                        <h1 class="sop-main-title" style="font-size: 44px; line-height: 1.12; font-weight: 700; color: #0F172A; margin-bottom: 24px;">
+                            Most AI Projects Fail Because They Try to Replace People <span class="text-blue-highlight" style="color: #1E40AF;">Instead of Removing Friction.</span>
+                        </h1>
+
+                        <p class="sop-lead-paragraph" style="font-size: 17px; color: #475569; line-height: 1.6; margin-bottom: 16px;">
+                            Open any tech blog today and you will hear promises of "fully autonomous businesses" where software does everything and humans simply sit back. We see things differently.
+                        </p>
+
+                        <p class="sop-sub-lead font-semibold" style="font-size: 17px; color: #1E293B; line-height: 1.6; font-weight: 600; margin-bottom: 32px;">
+                            At Brownstone Consulting, our foundation is built on three core beliefs about how growing, ambitious companies actually win: augmenting your team's judgment while eliminating background administrative noise.
+                        </p>
+
+                        <div class="sop-actions" style="display: flex; flex-wrap: wrap; gap: 16px;">
+                            <a href="/#audit" class="btn btn-solid-blue" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Schedule 30-Min Operational Audit</a>
+                            <a href="#pillars" class="btn btn-outline-dark" style="text-decoration: none;">Read Our 3 Core Beliefs <span class="arrow-down">↓</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Executive Hero Visual Card -->
+                    <div class="lg:col-span-5 flex justify-center items-center w-full">
+                        <div class="relative w-full max-w-[480px] aspect-[4/3] rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl shadow-slate-900/5 group" style="position: relative; width: 100%; max-width: 480px; aspect-ratio: 4/3; border-radius: 24px; overflow: hidden; border: 1px solid rgba(226, 232, 240, 0.9); box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.05);">
+                            <img 
+                                src="images/philosophy-foundation.jpg" 
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542744094-24638eff58bb?q=80&w=1200&auto=format&fit=crop';" 
+                                alt="Executive leadership collaborating on operational strategy" 
+                                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                                loading="eager"
+                                style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"
+                            />
+                            
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.6) 0%, transparent 60%); pointer-events: none;"></div>
+
+                            <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-lg bg-slate-900/85 backdrop-blur-md border border-white/15" style="position: absolute; top: 16px; left: 16px; z-index: 10; background: rgba(15, 23, 42, 0.85); color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 8px;">
+                                <span class="text-xs font-semibold text-white tracking-wide">
+                                    Operational Foundation
+                                </span>
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 z-10 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md" style="position: absolute; bottom: 16px; left: 16px; right: 16px; z-index: 10; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border: 1px solid rgba(226, 232, 240, 0.9); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); padding: 16px; border-radius: 16px;">
+                                <div class="flex items-center justify-between" style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                                    <span class="text-xs font-bold text-slate-900" style="font-size: 12px; font-weight: 700; color: #0F172A;">
+                                        Augmentation Over Replacement
+                                    </span>
+                                    <span class="text-[10px] font-semibold text-[#1E40AF] bg-blue-50 border border-blue-200 px-2 py-0.5 rounded" style="font-size: 10px; font-weight: 600; color: #1E40AF; background: #EFF6FF; border: 1px solid #BFDBFE; padding: 2px 8px; border-radius: 4px;">
+                                        Zero Drag
+                                    </span>
+                                </div>
+                                <p class="text-[11px] text-slate-600 mt-1 leading-snug font-normal" style="font-size: 11px; color: #475569; font-weight: 400; margin-top: 4px; line-height: 1.4;">
+                                    Quiet automated workflows that amplify human decision speed without replacing your team.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── 01 // Section: Three Core Beliefs (Alternating Editorial Visual Cards) ─── -->
+        <section class="sop-section bg-light-surface" id="pillars" style="padding: 80px 0; background: #FAFAFC; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0;">
+            <div class="sop-container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+                <div class="section-header-left" style="margin-bottom: 48px;">
+                    <div class="section-tag font-sans" style="color: #1E40AF; font-weight: 700; font-size: 12px; letter-spacing: 0.1em; margin-bottom: 8px;">CORE OPERATIONAL BELIEFS</div>
+                    <h2 class="section-title" style="font-size: 36px; font-weight: 700; color: #0F172A;">How Ambitious Companies Actually Scale.</h2>
+                    <p class="section-desc" style="color: #475569; font-size: 16px;">Three unwavering principles that govern every workflow and automation engine we build.</p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 48px;">
+                    <!-- Principle 01 (Left Text / Right Image) -->
+                    <div style="background: #FFFFFF; border-radius: 20px; border: 1px solid #E2E8F0; padding: 36px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;" class="framework-card-grid">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                <span style="width: 36px; height: 36px; border-radius: 10px; background: #1E40AF; color: #FFFFFF; font-family: var(--font-sans); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center;">01</span>
+                                <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: #1E40AF; text-transform: uppercase; letter-spacing: 0.05em;">Belief 01: Background Simplicity</span>
+                            </div>
+                            <h3 style="font-size: 24px; font-weight: 700; color: #0F172A; margin-bottom: 12px;">Quiet Systems Beat Loud Software</h3>
+                            <p style="color: #475569; font-size: 15px; line-height: 1.6; margin-bottom: 16px;">The software industry makes money by selling subscriptions per user seat. Their goal is to keep your team logged into their app for eight hours every day, clicking buttons, filling fields, and managing complex dashboards.</p>
+                            <div style="background: #EFF6FF; padding: 16px; border-left: 4px solid #1E40AF; border-radius: 8px; font-weight: 600; color: #0F172A; font-size: 14px; line-height: 1.6; margin-bottom: 12px;">
+                                Our goal is the exact opposite. The best operational systems are quiet. They sit invisible in the background, connecting your existing chats, emails, and files so your team spends less time staring at screens and more time serving clients, closing deals, and building products.
+                            </div>
+                            <p style="font-size: 13px; color: #64748B; font-style: italic; margin: 0;">
+                                If an automated system requires weeks of training or a 100-page manual, it is not an improvement—it is an obstacle.
+                            </p>
+                        </div>
+                        <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; height: 280px;">
+                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=900&auto=format&fit=crop" alt="Clean modern office environment illustrating quiet background system automation" style="width: 100%; height: 100%; object-fit: cover;" />
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.6) 0%, rgba(15,23,42,0.1) 50%, transparent 100%);"></div>
+                            <div style="position: absolute; bottom: 12px; left: 12px; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); color: #0F172A; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                Quiet Ambient Workflows
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principle 02 (Left Image / Right Text) -->
+                    <div style="background: #FFFFFF; border-radius: 20px; border: 1px solid #E2E8F0; padding: 36px; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 32px; align-items: center;" class="framework-card-grid">
+                        <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; height: 280px;">
+                            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=900&auto=format&fit=crop" alt="Strategic architects planning deterministic engineering logic" style="width: 100%; height: 100%; object-fit: cover;" />
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.6) 0%, rgba(15,23,42,0.1) 50%, transparent 100%);"></div>
+                            <div style="position: absolute; bottom: 12px; left: 12px; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); color: #0F172A; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                Deterministic Logic First
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                <span style="width: 36px; height: 36px; border-radius: 10px; background: #1E40AF; color: #FFFFFF; font-family: var(--font-sans); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center;">02</span>
+                                <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: #1E40AF; text-transform: uppercase; letter-spacing: 0.05em;">Belief 02: Pragmatic Engineering</span>
+                            </div>
+                            <h3 style="font-size: 24px; font-weight: 700; color: #0F172A; margin-bottom: 12px;">The Right Tool for the Right Task (No AI for the Sake of AI)</h3>
+                            <p style="color: #475569; font-size: 15px; line-height: 1.6; margin-bottom: 16px;">Many consultants force artificial intelligence into places where it does not belong, driving up costs and introducing avoidable errors.</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+                                <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                    <div style="font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: #1E40AF; text-transform: uppercase; margin-bottom: 4px;">DETERMINISTIC LOGIC</div>
+                                    <div style="font-size: 12px; color: #334155; line-height: 1.4;">Exact mathematical checks for bank transactions, ledger matching, and invoice validation.</div>
+                                </div>
+                                <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                    <div style="font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: #1E40AF; text-transform: uppercase; margin-bottom: 4px;">INTELLIGENT COMPREHENSION</div>
+                                    <div style="font-size: 12px; color: #334155; line-height: 1.4;">Pattern recognition for complex customer support emails, messy inquiries, and document intent.</div>
+                                </div>
+                            </div>
+                            <div style="background: #EFF6FF; padding: 16px; border-left: 4px solid #1E40AF; border-radius: 8px; font-weight: 600; color: #0F172A; font-size: 14px; line-height: 1.6;">
+                                We apply hard mathematical rules where accuracy is mandatory, and deploy AI only where true context saves your team hundreds of manual hours.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principle 03 (Left Text / Right Image) -->
+                    <div style="background: #FFFFFF; border-radius: 20px; border: 1px solid #E2E8F0; padding: 36px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center;" class="framework-card-grid">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                <span style="width: 36px; height: 36px; border-radius: 10px; background: #1E40AF; color: #FFFFFF; font-family: var(--font-sans); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center;">03</span>
+                                <span style="font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: #1E40AF; text-transform: uppercase; letter-spacing: 0.05em;">Belief 03: Human Governance</span>
+                            </div>
+                            <h3 style="font-size: 24px; font-weight: 700; color: #0F172A; margin-bottom: 12px;">Humans Stay at the Helm (Human-in-the-Loop)</h3>
+                            <p style="color: #475569; font-size: 15px; line-height: 1.6; margin-bottom: 16px;">No algorithm should ever make a financial payment, send an unreviewed contract, or publish an external communication on its own. Full automation without human oversight is a disaster waiting to happen.</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+                                <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                    <div style="font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: #1E40AF; text-transform: uppercase; margin-bottom: 2px;">SYSTEM AUTOMATION</div>
+                                    <div style="font-size: 13px; font-weight: 700; color: #0F172A; margin-bottom: 2px;">Background Heavy Lifting</div>
+                                    <div style="font-size: 12px; color: #64748B;">Reading files, cross-checking records &amp; preparing clean drafts.</div>
+                                </div>
+                                <div style="background: #F8FAFC; padding: 12px; border-radius: 8px; border: 1px solid #E2E8F0;">
+                                    <div style="font-family: var(--font-sans); font-size: 12px; font-weight: 700; color: #047857; text-transform: uppercase; margin-bottom: 2px;">HUMAN OVERSIGHT</div>
+                                    <div style="font-size: 13px; font-weight: 700; color: #0F172A; margin-bottom: 2px;">Total Control &amp; Sign-off</div>
+                                    <div style="font-size: 12px; color: #64748B;">Reviewing summaries, applying judgment &amp; approving in seconds.</div>
+                                </div>
+                            </div>
+                            <div style="background: #EFF6FF; padding: 16px; border-left: 4px solid #1E40AF; border-radius: 8px; font-weight: 600; color: #0F172A; font-size: 14px; line-height: 1.6;">
+                                Speed without safety is reckless. We build speed with safety built into every single step.
+                            </div>
+                        </div>
+                        <div style="position: relative; border-radius: 12px; overflow: hidden; border: 1px solid #E2E8F0; height: 280px;">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=900&auto=format&fit=crop" alt="Executive reviewing and granting final sign-off on automated briefing" style="width: 100%; height: 100%; object-fit: cover;" />
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.6) 0%, rgba(15,23,42,0.1) 50%, transparent 100%);"></div>
+                            <div style="position: absolute; bottom: 12px; left: 12px; z-index: 10; background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); color: #0F172A; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 8px; border: 1px solid #E2E8F0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                100% Human Governance
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── 02 // Section: The Brownstone Standard ─── -->
+        <section class="sop-section bg-white">
+            <div class="sop-container">
+                <div style="background: #0f172a; color: #ffffff; padding: 48px; border-radius: 16px; box-shadow: 0 10px 25px rgba(15,23,42,0.15);">
+                    <div class="font-sans text-xs font-bold text-blue-400 tracking-widest uppercase mb-3" style="color: #60a5fa; font-family: var(--font-sans, sans-serif); margin-bottom: 12px;">✦ THE BROWNSTONE STANDARD</div>
+                    <h2 style="color: #ffffff; font-size: 32px; font-weight: 700; margin-bottom: 16px;">Operations as an Enduring Foundation</h2>
+                    <p style="color: #cbd5e1; font-size: 17px; line-height: 1.6; margin-bottom: 16px;">
+                        In classical architecture, the brownstone represents enduring strength, stability, and structure. It is the material you trust to carry weight and stand the test of time.
+                    </p>
+                    <p style="color: #ffffff; font-size: 17px; font-weight: 600; line-height: 1.6; margin-bottom: 24px;">
+                        That is how we view business operations. Fast marketing and aggressive sales mean nothing if your operational foundation cannot bear the load. When your workflows are grounded, resilient, and interconnected across every department, scaling your business stops being a chaotic scramble—it becomes steady, predictable progress.
+                    </p>
+                    <div style="border-top: 1px solid #334155; padding-top: 16px; font-family: var(--font-sans, sans-serif); font-size: 12px; font-weight: 700; color: #93c5fd; letter-spacing: 0.1em;">
+                        GROUNDED • RESILIENT • INTERCONNECTED
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive CTA Banner Block -->
+        <section class="sop-section bg-white">
+            <div class="sop-container">
+                <div class="cta-banner-box">
+                    <div class="banner-tag font-sans" style="font-weight: 700;">✦ BUILD ON A STRONGER FOUNDATION</div>
+                    <h2>Let’s Design a Stable Operational Framework That Grows With You.</h2>
+                    <p>Speak directly with a Senior Managing Partner to review how your business works today and eliminate friction from your workflows.</p>
+                    <button class="btn btn-solid-blue" data-modal-target="audit-modal">Schedule 30-Min Operational Audit <span class="arrow-right">→</span></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ─── Institutional-Grade Royal Navy Footer ─── -->
+    <footer style="background: linear-gradient(180deg, #070F1E 0%, #0A192F 50%, #050B14 100%); color: #94A3B8; font-family: var(--font-sans, system-ui, sans-serif); border-top: 1px solid rgba(30, 64, 175, 0.4); position: relative; overflow: hidden;" class="w-full bg-gradient-to-b from-[#070F1E] via-[#0A192F] to-[#050B14] text-slate-300 border-t border-blue-900/40 font-sans relative overflow-hidden">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 48px; position: relative; z-index: 10;">
+            <!-- Section 1: 5-Column Grid Layout (12 Cols) -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 36px;" class="footer-grid">
+                <!-- Column 1: Brand & Direct Outreach (Span 2) -->
+                <div style="grid-column: span 2;">
+                    <a href="/" class="inline-block select-none mb-3 hover:opacity-95 transition-opacity" style="text-decoration: none !important; display: block;">
+                      <span style="
+                        font-family: 'Cinzel', 'Times New Roman', Georgia, serif !important;
+                        font-size: 20px !important;
+                        font-weight: 700 !important;
+                        letter-spacing: 0.18em !important;
+                        color: #FFFFFF !important;
+                        text-transform: uppercase !important;
+                        display: inline-block !important;
+                        line-height: 1 !important;
+                        -webkit-text-fill-color: #FFFFFF !important;
+                      ">
+                        BROWNSTONE CONSULTING
+                      </span>
+                    </a>
+                    <p style="color: #94A3B8; font-size: 13px; line-height: 1.6; margin-bottom: 20px; max-width: 320px;">
+                        Operational discipline over software bloat. We advise executive leadership on process architecture, risk mitigation, and quiet, audit-ready workflows.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px; color: #CBD5E1;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#60A5FA" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            <a href="mailto:hello@brownstoneconsulting.in" style="color: inherit; text-decoration: none;">hello@brownstoneconsulting.in</a>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#60A5FA" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.828-1.488-5.127-3.787-6.615-6.615l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+                            <a href="tel:+918652168748" style="color: inherit; text-decoration: none;">+91 8652168748</a>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 10px;">
+                            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#60A5FA" stroke-width="1.75" style="margin-top: 2px; flex-shrink: 0;"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            <span style="line-height: 1.4;">G-40 D wing Elco Arcade, Hill Rd, Bandra West, Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Practice -->
+                <div>
+                    <h3 style="font-size: 12px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;">PRACTICE</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 12px;">
+                        <li><a href="/growth-marketing/" style="color: #94A3B8; text-decoration: none;">Growth &amp; Marketing Operations</a></li>
+                        <li><a href="/finance-compliance/" style="color: #94A3B8; text-decoration: none;">Financial Controls &amp; SEBI</a></li>
+                        <li><a href="/it-operations/" style="color: #94A3B8; text-decoration: none;">IT &amp; Technical Operations</a></li>
+                        <li><a href="/sales-operations/" style="color: #94A3B8; text-decoration: none;">Sales &amp; Operations</a></li>
+                        <li><a href="/hr-talent/" style="color: #94A3B8; text-decoration: none;">HR &amp; Talent Management</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Advisory -->
+                <div>
+                    <h3 style="font-size: 12px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;">ADVISORY</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 12px;">
+                        <li><a href="/#methodology" style="color: #94A3B8; text-decoration: none;">Our Methodology</a></li>
+                        <li><a href="/philosophy/" style="color: #94A3B8; text-decoration: none;">About Our Philosophy</a></li>
+                        <li><a href="/careers/" style="color: #94A3B8; text-decoration: none; display: inline-flex; align-items: center;">Careers <span style="margin-left: 6px; padding: 2px 6px; font-size: 10px; font-weight: 600; color: #93C5FD; background: rgba(30,58,138,0.8); border: 1px solid rgba(30,64,175,0.6); border-radius: 4px;">HIRING</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Governance -->
+                <div>
+                    <h3 style="font-size: 12px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px;">GOVERNANCE</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 12px;">
+                        <li><a href="/privacy/" style="color: #94A3B8; text-decoration: none;">Privacy Policy</a></li>
+                        <li><a href="/faqs/" style="color: #94A3B8; text-decoration: none;">Frequently Asked Questions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 5: Executive Audit Guarantee & Inquiries Card (Span 2) -->
+                <div style="grid-column: span 2;">
+                    <div style="background: linear-gradient(135deg, rgba(13,35,71,0.8) 0%, rgba(10,25,47,0.9) 100%); backdrop-filter: blur(8px); border: 1px solid rgba(30, 64, 175, 0.4); padding: 20px; border-radius: 16px; box-shadow: 0 10px 25px rgba(6, 13, 24, 0.4);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px;">
+                            <span style="font-size: 10px; font-weight: 700; color: #93C5FD; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(30, 64, 175, 0.5); padding: 3px 8px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em;">
+                                INSTITUTIONAL GUARANTEE
+                            </span>
+                            <span style="width: 8px; height: 8px; border-radius: 50%; background: #60A5FA;"></span>
+                        </div>
+                        
+                        <h4 style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin: 0 0 6px;">30-Min Executive Audit</h4>
+                        <p style="font-size: 12px; color: #CBD5E1; line-height: 1.5; margin: 0 0 14px;">
+                            Speak directly with a Senior Managing Partner. Confidential diagnostic review with strict NDA compliance.
+                        </p>
+
+                        <a href="/#audit" class="btn btn-solid-blue bg-[#1E40AF] text-white font-semibold shadow-md hover:bg-blue-700 transition-colors" style="background-color: #1E40AF !important; color: #FFFFFF !important; font-weight: 600 !important; font-size: 12px; width: 100%; justify-content: center; padding: 10px 16px; border-radius: 10px; margin-bottom: 10px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); cursor: pointer;">Schedule Audit Session →</a>
+
+                        <div style="font-size: 11px; color: #94A3B8; display: flex; align-items: center; gap: 6px; padding-top: 8px; border-top: 1px solid rgba(30, 64, 175, 0.3);">
+                            <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#60A5FA" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span>Response within 2 business hours.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Institutional Governance Row -->
+            <div style="border-top: 1px solid rgba(30, 64, 175, 0.4); margin: 32px 0 24px; padding-top: 24px;">
+                <p style="font-size: 11px; color: #94A3B8; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; margin: 0;">
+                    Regulatory Disclosures • Corporate Governance • Operational Risk &amp; Security • Privacy Statement • DPDP Act Compliance
+                </p>
+            </div>
+
+            <!-- Section 3: Bottom Legal & Verified Channels Row -->
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; border-top: 1px solid rgba(30, 64, 175, 0.3); font-size: 12px; color: #94A3B8;">
+                <div>© 2026 Brownstone Consulting. All rights reserved.</div>
+                
+                <!-- Social Channels -->
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a href="https://www.linkedin.com/in/brownstone-consulting-46a429434/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="width: 32px; height: 32px; border-radius: 50%; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.6); display: flex; align-items: center; justify-content: center; color: #94A3B8; text-decoration: none;"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.66a1.64 1.64 0 1 0 0 3.28 1.64 1.64 0 0 0 0-3.28Z"/></svg></a>
+                    <a href="https://www.instagram.com/brownstone.consulting/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="width: 32px; height: 32px; border-radius: 50%; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.6); display: flex; align-items: center; justify-content: center; color: #94A3B8; text-decoration: none;"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                    <a href="https://x.com/Brownstone_in" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" style="width: 32px; height: 32px; border-radius: 50%; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.6); display: flex; align-items: center; justify-content: center; color: #94A3B8; text-decoration: none;"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    <a href="https://www.youtube.com/@BrownstoneConsulting" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style="width: 32px; height: 32px; border-radius: 50%; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.6); display: flex; align-items: center; justify-content: center; color: #94A3B8; text-decoration: none;"><svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+
+                <!-- Back to Top -->
+                <a href="#site-header" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: #94A3B8; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 9999px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(51, 65, 85, 0.6);">
+                    <span>Back to top</span> ↑
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── Interactive Operational Audit Modal ─── -->
+    <div class="modal-backdrop" id="audit-modal" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="modal-audit-title">
+        <div class="modal-window">
+            <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-tag font-mono">EXECUTIVE OPERATIONAL AUDIT</div>
+                <h3 class="modal-title" id="modal-audit-title">Schedule 30-Min Operational Audit</h3>
+                <p class="modal-desc">Speak directly with a senior managing partner to diagnose workflow friction, manual overhead, and automation opportunities in your enterprise software suite.</p>
+            </div>
+            <form id="auditForm" class="audit-form space-y-4">
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="auditFullName">Full Name *</label>
+                        <input type="text" id="auditFullName" name="fullName" required placeholder="e.g. Sarah Jenkins">
+                    </div>
+                    <div class="form-field">
+                        <label for="auditEmail">Work Email *</label>
+                        <input type="email" id="auditEmail" name="workEmail" required placeholder="s.jenkins@company.com">
+                    </div>
+                    <div class="form-field">
+                        <label for="auditCompany">Company Name *</label>
+                        <input type="text" id="auditCompany" name="companyName" required placeholder="e.g. Apex Global Logistics">
+                    </div>
+                    <div class="form-field">
+                        <label for="auditTeamSize">Team Size</label>
+                        <select id="auditTeamSize" name="teamSize" required>
+                            <option value="10-50">10 – 50 employees</option>
+                            <option value="50-250">50 – 250 employees</option>
+                            <option value="250-1000">250 – 1,000 employees</option>
+                            <option value="1000+">1,000+ Enterprise</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-field full-width">
+                    <label for="auditBottleneck">Primary Bottleneck / Priority Area</label>
+                    <textarea id="auditBottleneck" name="bottleneck" rows="3"
+                        placeholder="Describe manual processes, redundant data entry, or communication delays..." required></textarea>
+                </div>
+                <button type="submit" id="auditSubmitBtn" class="btn btn-solid-blue btn-full">Submit Operational Audit Request</button>
+                <p id="auditStatusMsg" class="text-xs text-center font-medium mt-2 hidden"></p>
+                <div class="form-security-note">✦ Confidential institutional review. Strict NDA compliance.</div>
+            </form>
+
+            <div class="modal-thankyou" id="audit-thankyou" style="display: none;">
+                <div class="thankyou-badge">✓</div>
+                <h3>Audit Session Request Confirmed</h3>
+                <p>A Senior Director from Brownstone Consulting will review your workflow parameters and reach out within 2 business hours with calendar invites.</p>
+                <button class="btn btn-outline-dark modal-dismiss">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
