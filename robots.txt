@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brownstoneconsulting.in/sitemap.xml
