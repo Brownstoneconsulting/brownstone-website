@@ -25,4 +25,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Googlebot-Favicon
+Allow: /
+
 Sitemap: https://brownstoneconsulting.in/sitemap.xml
