@@ -1,31 +1,26 @@
 User-agent: *
 Allow: /
 
-# OpenAI Search & Crawlers
+# OpenAI
 User-agent: GPTBot
-Allow: /
 User-agent: OAI-SearchBot
-Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-# Perplexity AI
-User-agent: PerplexityBot
+# Anthropic
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 Allow: /
 
-# Anthropic (Claude)
-User-agent: ClaudeBot
-Allow: /
-User-agent: anthropic-ai
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
 Allow: /
 
 # Google
 User-agent: Googlebot
-Allow: /
 User-agent: Google-Extended
-Allow: /
-
-User-agent: Googlebot-Favicon
 Allow: /
 
 Sitemap: https://brownstoneconsulting.in/sitemap.xml
